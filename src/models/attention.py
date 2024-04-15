@@ -36,6 +36,10 @@ def attn_selector(attn_type, config, W_q=None, W_k=None, W_v=None):
         from models.attention_skyformer import Skyformer
         attn = Skyformer(config)
 
+    elif attn_type.startswith("hyper"):
+        from models.attention_hyperattention import HyperAttention
+        attn = HyperAttention(config) # Extra configs??
+
     return attn
 
 
